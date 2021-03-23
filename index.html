@@ -25,11 +25,39 @@
             <div class="search">
             <i class="fas fa-search"></i><input type="text"> 
             </div>
-            <div class="contatti"></div>
+            <div class="contatti">
+                <ul class="cont">
+                    <li v-for="contact in contacts">
+                        <img class="avt" :src="contact.avatar" alt="">
+                        <h1>{{contact.name}}</h1>
+                    </li>
+
+                </ul>
+            </div>
         </div>
         <div class="msg">
-            <div class="cont_atv"></div>
-            <div class="chat"></div>
+            <div class="cont_atv" >
+                <img class="avt" :src="contacts[0].avatar" alt="">
+                <h1>{{contacts[0].name}}</h1>
+            </div>
+            <div class="chat">
+                <div class="utn_text baloon">
+                    <strong class="text">{{contacts[0].messages[0].text}}</strong>
+                    <span class="date">{{contacts[0].messages[0].date}}</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="utn_text baloon">
+                    <strong class="text">{{contacts[0].messages[1].text}}</strong>
+                    <span class="date">{{contacts[0].messages[1].date}}</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="cont_text baloon">
+                    <strong class="text">{{contacts[0].messages[2].text}}</strong>
+                    <span class="date">{{contacts[0].messages[2].date}}</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
             <div class="risp"></div>
         </div>
     </div>
