@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(to bottom, green 0px, green 20%, rgb(196, 196, 196) 20%, rgb(196, 196, 196) 100%);
+}
+
+/* general div */
+
+.container {
+    position: relative;
+    width: 80%;
+    height: 80vh;
+    background-color: lightgrey;
+    margin: 100px;
+    z-index: 999;
+}
+.utn, .msg {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTATTI */
+
+.utn {
+    position: absolute;
+    width: 40%;
+}
+.utente, .notifiche {
+    width: 100%;
+    height: 10%;
+}
+.notifiche {
+    position: relative;
+    background-color: lightblue;
+    padding: 1%;
+}
+.bell {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 11%;
+    height: 67%;
+    background-color: lightcyan;
+    border-radius: 25px;
+}
+.not_text {
+    position: absolute;
+    top: 5%;
+    left: 30%;
+}
+.bell i {
+    font-size: 2em;
+    padding: 9%;
+}
+.search {
+    width: 100%;
+    height: 5%;
+    background-color: rgb(236, 238, 238);
+}
+.contatti {
+    width: 100%;
+    height: 75%;
+    background-color: white;
+}
+
+/* MESSAGGI */
+
+.msg {
+    position: absolute;
+    width: 60%;
+    background-image: url(../img/mine.jpg);
+    margin-left: 40%;
+}
+.cont_atv, .risp {
+    width: 99.7%;
+    height: 10%;
+    margin-left: 0.3%;
+}
+.cont_atv {
+    background-color: lightgray;
+}
+.risp {
+    background-color: rgb(236, 238, 238);
+}
+.chat {
+    width: 100%;
+    height: 80%;
+}
+
+
