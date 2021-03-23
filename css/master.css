@@ -14,6 +14,14 @@ li {
     width: 50px;
     border-radius: 50px;
 }
+.nome_utente {
+    display: inline;
+    padding: 10px;
+}
+.icone {
+    align-self: center;
+    justify-self: flex-end;
+}
 
 
 
@@ -34,12 +42,16 @@ li {
 }
 
 /* CONTATTI */
-
+.cont li, .utente {
+    display: flex;
+    align-items: center;
+}
 .utn {
     position: absolute;
     width: 40%;
 }
 .utente, .notifiche {
+    display: flex;
     width: 100%;
     height: 10%;
 }
@@ -78,14 +90,6 @@ li {
     background-color: white;
     padding: 10px;
 }
-.cont li {
-    display: flex;
-    align-items: center;
-}
-.cont li h1 {
-    display: inline;
-    padding: 10px;
-}
 
 /* MESSAGGI */
 
@@ -111,6 +115,7 @@ li {
     padding: 10px;
 }
 .chat {
+    overflow: scroll;
     display: flex;
     flex-direction: column;
 }
@@ -152,6 +157,9 @@ li {
     width: 100%;
     height: 80%;
     padding: 50px 100px 50px 100px;
+}
+.risp {
+    display: flex;
 }
 
 
