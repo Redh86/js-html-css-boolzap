@@ -1,6 +1,8 @@
 var app = new Vue({
     el: "#root",
     data: {
+        activeContact: 0,
+        msg: "",
         contacts: [
             {
                 name: 'Michele',
@@ -85,6 +87,28 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
-    }
+        ],
+    },
+    methods: {
+        setActive(index){
+            this.activeContact = index;
+        },
+        addMsg() {
+            var newMsg = {
+                date: '10/01/2020 15:50:00',
+                text: this.msg,
+                status: 'received'
+            }
+            var newResp = {
+                date: '10/01/2020 15:50:00',
+                text: 'ok',
+                status: 'received'
+            }
+            this.contacts[this.activeContact].messages.push(newMsg);
+            this.msg = "";
+            this.contacts[this.activeContact].messages.push(newResp);
+        },
+    },
 });
+
+

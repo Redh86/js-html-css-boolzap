@@ -35,7 +35,7 @@
             </div>
             <div class="contatti">
                 <ul class="cont">
-                    <li v-for="contact in contacts">
+                    <li v-for="(contact, index) in contacts" @click="setActive(index)">
                         <img class="avt" :src="contact.avatar" alt="">
                         <h1 class="nome_utente">{{contact.name}}</h1>
                     </li>
@@ -43,10 +43,11 @@
                 </ul>
             </div>
         </div>
+        <!--MESSAGGI-->
         <div class="msg">
             <div class="cont_atv" >
-                <img class="avt" :src="contacts[0].avatar" alt="">
-                <h1 class="nome_utente">{{contacts[0].name}}</h1>
+                <img class="avt" :src="contacts[activeContact].avatar" alt="">
+                <h1 class="nome_utente">{{contacts[activeContact].name}}</h1>
                 <div class="icone">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-file"></i>
@@ -54,26 +55,16 @@
                 </div>
             </div>
             <div class="chat">
-                <div class="utn_text baloon">
-                    <strong class="text">{{contacts[0].messages[0].text}}</strong>
-                    <span class="date">{{contacts[0].messages[0].date}}</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="utn_text baloon">
-                    <strong class="text">{{contacts[0].messages[1].text}}</strong>
-                    <span class="date">{{contacts[0].messages[1].date}}</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="cont_text baloon">
-                    <strong class="text">{{contacts[0].messages[2].text}}</strong>
-                    <span class="date">{{contacts[0].messages[2].date}}</span>
+                <div class="utn_text baloon" v-for="(message, index) in contacts[activeContact].messages">
+                    <strong class="text">{{contacts[activeContact].messages[index].text}}</strong>
+                    <span class="date">{{contacts[activeContact].messages[index].date}}</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
 
             <div class="risp">
                 <i class="far fa-smile"></i>
-                <input type="text">
+                <input type="text" @keypress.enter="addMsg" v-model="msg">
                 <i class="fas fa-microphone-alt"></i>
             </div>
         </div>
