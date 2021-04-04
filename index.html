@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="root" class="container">
+        <!-- UTENTE PROPRIETRIO -->
         <div class="utn">
             <div class="utente">
                 <img class="avt" src="img/avatar_io.jpg" alt="">
@@ -21,6 +22,7 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
+            <!-- CAMPANELLO NOTIFICHE -->
             <div class="notifiche">
                 <div class="bell">
                     <i class="far fa-bell-slash"></i>
@@ -30,21 +32,24 @@
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
             </div>
-            <div class="search">
-            <i class="fas fa-search"></i><input type="text"> 
+            <!-- CERCA CONTATTI -->
+            <div class="find">
+                <i class="fas fa-search"></i>
+                <input type="text" v-model="search" @keyup="searchContacts"> 
             </div>
+            <!-- CONTATTI -->
             <div class="contatti">
                 <ul class="cont">
-                    <li v-for="(contact, index) in contacts" @click="setActive(index)">
+                    <li v-for="(contact, index) in contacts" @click="setActive(index)" v-if="contact.visible">
                         <img class="avt" :src="contact.avatar" alt="">
                         <h1 class="nome_utente">{{contact.name}}</h1>
                     </li>
-
                 </ul>
             </div>
         </div>
         <!--MESSAGGI-->
         <div class="msg">
+            <!-- UTENTE SELEZIONATYO -->
             <div class="cont_atv" >
                 <img class="avt" :src="contacts[activeContact].avatar" alt="">
                 <h1 class="nome_utente">{{contacts[activeContact].name}}</h1>
@@ -54,14 +59,15 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
+            <!-- CHATTTTTTTT -->
             <div class="chat">
-                <div class="utn_text baloon" v-for="(message, index) in contacts[activeContact].messages">
+                <div id="baloon" v-for="(message, index) in contacts[activeContact].messages" :class="getMessageClass(index)">
                     <strong class="text">{{contacts[activeContact].messages[index].text}}</strong>
                     <span class="date">{{contacts[activeContact].messages[index].date}}</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-
+            <!-- INPUT DI RISPOSTA -->
             <div class="risp">
                 <i class="far fa-smile"></i>
                 <input type="text" @keypress.enter="addMsg" v-model="msg">

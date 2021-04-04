@@ -22,6 +22,9 @@ li {
     align-self: center;
     justify-self: flex-end;
 }
+i {
+    padding: 3px;
+}
 
 
 
@@ -42,47 +45,67 @@ li {
 }
 
 /* CONTATTI */
-.cont li, .utente {
+/*UTENTE PROPRIETRIO*/
+.utente {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 10%;
+    padding: 2%;
+}
+.utente .icone {
+    position: absolute;
+    right: 0;
+    padding: 5px;
+}
+.cont li{
     display: flex;
     align-items: center;
 }
+
 .utn {
     position: absolute;
     width: 40%;
 }
-.utente, .notifiche {
+/* CAMPANELLO NOTIFICHE */
+.notifiche {
     display: flex;
     width: 100%;
     height: 10%;
 }
 .notifiche {
-    position: relative;
+    display: flex;
+    align-content: center;
     background-color: lightblue;
-    padding: 1%;
+    padding: 2%;
 }
 .bell {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 11%;
-    height: 67%;
+    width: 50px;
+    height: 50px;
     background-color: lightcyan;
     border-radius: 25px;
 }
 .not_text {
-    position: absolute;
-    top: 5%;
-    left: 30%;
+    padding-left: 5px;
 }
 .bell i {
     font-size: 2em;
-    padding: 9%;
+    padding: 15%;
 }
-.search {
+/* CERCA CONTATTI */
+.find {
+    display: flex;
+    align-content: center;
     width: 100%;
     height: 5%;
     background-color: rgb(236, 238, 238);
+    padding: 2%;
 }
+.find input {
+    width: 60%;
+    height: 20px;
+}
+/* CONTATTI */
 .contatti {
     overflow: scroll;
     width: 100%;
@@ -90,6 +113,13 @@ li {
     background-color: white;
     padding: 10px;
 }
+.contatti .cont li:hover {
+    background: #f4f5f5;
+}
+.contatti .cont li:active {
+    background: #2f3030;
+}
+
 
 /* MESSAGGI */
 
@@ -99,29 +129,39 @@ li {
     background-image: url(../img/mine.jpg);
     margin-left: 40%;
 }
-.cont_atv, .risp {
-    width: 99.7%;
-    height: 10%;
-    margin-left: 0.3%;
-}
+/* UTENTE SELEZIONATYO */
 .cont_atv {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: lightgray;
     padding: 10px;
 }
+.cont_atv .icone {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+}
+.cont_atv, .risp {
+    width: 99.7%;
+    height: 10%;
+    margin-left: 0.3%;
+}
 .cont_atv h1 {
     display: inline;
     padding: 10px;
 }
+/* CHATTTTTTTT */
 .chat {
     overflow: scroll;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 80%;
+    padding: 50px 100px 50px 100px;
 }
-.baloon {
+#baloon {
     position: relative;
-    display: flex;
     width: 300px;
     height: 50px;
     border-radius: 20px;
@@ -143,23 +183,28 @@ li {
     top: 10px;
     right: 20px ;
 }
-.cont_text {
-    background-color: white;
+.text_received {
+    background: white;
+    clear: both;
 }
-.utn_text{
+.text_sent { 
+    background: #D5F9BA;
     align-self: flex-end;
-    background-color: lightgreen;
+    clear: both;
 }
+/* INPUT DI RISPOSTA */
 .risp {
-    background-color: rgb(236, 238, 238);
+   display: flex; 
+   align-content: center;
+   justify-content: space-around;
+   background-color: rgb(236, 238, 238);
+   padding: 2%;
 }
-.chat {
-    width: 100%;
-    height: 80%;
-    padding: 50px 100px 50px 100px;
+
+.risp input {
+    width: 60%;
+    height: 20px;
 }
-.risp {
-    display: flex;
-}
+
 
 

@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         activeContact: 0,
         msg: "",
+        search: "",
         contacts: [
             {
                 name: 'Michele',
@@ -97,7 +98,7 @@ var app = new Vue({
             var newMsg = {
                 date: '10/01/2020 15:50:00',
                 text: this.msg,
-                status: 'received'
+                status: 'sent'
             }
             var newResp = {
                 date: '10/01/2020 15:50:00',
@@ -108,7 +109,22 @@ var app = new Vue({
             this.msg = "";
             this.contacts[this.activeContact].messages.push(newResp);
         },
+        getMessageClass(index) {
+            let messageClass = "text_" + this.contacts[this.activeContact].messages[index].status;
+            return messageClass;
+        },   
+        searchContacts() {
+            let self = this;
+            this.contacts.forEach((element) => {
+              if (element.name.toLowerCase().includes(self.search.toLowerCase())) {
+                element.visible = true;
+              } else {
+                element.visible = false;
+              }
+            });
+          },
     },
+
 });
 
 
